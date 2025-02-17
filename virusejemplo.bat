@@ -158,6 +158,17 @@ timeout /t 3 >nul
 echo [✓] Nodo atacante eliminado de la red
 cls
 
+:: Fase 15 - Propagación Simulada
+echo [■] Infectando sistemas adicionales...
+timeout /t 2 >nul
+set targetFolder=%USERPROFILE%\Documents\Infectados
+if not exist "%targetFolder%" mkdir "%targetFolder%"
+copy "%~f0" "%targetFolder%\payload.bat" >nul
+echo [✓] Código replicado en %targetFolder%
+timeout /t 3 >nul
+cls
+
+
 
 :: Fase Final - Apoteosis digital
 echo [■] SINCRONIZANDO CON LA RED GLOBAL...
