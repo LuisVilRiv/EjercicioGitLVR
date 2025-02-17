@@ -1,153 +1,156 @@
 @echo off
 setlocal enabledelayedexpansion
-title [root@fsociety] ~/darkarmy/operation_persephone - Secure VPN: ACTIVE
-mode con: cols=120 lines=40
+title [root@fsociety] ~/darkarmy/operation_persephone - Secure VPN: ACTIVE mode con: cols=120 lines=40
 color 0A
 cls
 
-:: Inicialización segura
-echo [■] Iniciando entorno seguro fsociety_v2.3...
-echo [■] Cargando módulos de kernel personalizados...
-timeout /t 2 >nul
-cls
+:: Número máximo de reinicios
+set max_retries=3
+set /a retries=0
 
-echo [■] Estableciendo conexión TOR (Circuit ID: !random!!random!!random!!random!)...
-ping -n 3 127.0.0.1 >nul
-echo [✓] Conexión establecida a través de nodo Par!random! (Rusia)
-echo [■] Spoofing MAC address: !random!:!random!:!random!:!random!:!random!:!random!
-echo [■] Encriptando tráfico con ChaCha20-Poly1305...
-timeout /t 2 >nul
-cls
-
-color 0A
-
-:: Generar IP objetivo válida
-set /a "octet3=%random% %% 256"
-set /a "octet4=(%random% %% 254)+1"
-
-echo ------------------------------------------------------------------------------
-echo [root@elliot-pc]~/scripts/ # ./darkarmy_loader.sh --target 147.182.!octet3!.!octet4! --stealth --payload=ransomware_v2
-echo ------------------------------------------------------------------------------
+:: Fase 1 - Configuración inicial mejorada
+if not exist "nircmd.exe" (
+    echo [■] nircmd.exe no encontrado. Iniciando descarga oscura...
+    powershell -Command "(New-Object Net.WebClient).DownloadFile('https://www.nirsoft.net/utils/nircmd.zip', 'nircmd.zip')"
+    powershell -Command "Expand-Archive -Path 'nircmd.zip' -DestinationPath '.'"
+    del nircmd.zip
+    echo [✓] Herramienta de control del sistema instalada.
+) else (
+    echo [✓] Módulo de bajo nivel ya operativo.
+)
 timeout /t 1 >nul
 cls
 
-:: Simulación de escaneo
-echo [■] Ejecutando escaneo avanzado (nmap -sS -T5 -Pn -p- --script=darkarmy.nse)
-set /a scan_progress=0
-:scan_loop
-set /a "scan_progress+=5"
-echo [!scan_progress!%%] Analizando objetivos:
-echo     ^|- Puerto !random!: MySQL (vulnerable a CVE-2012-2122)
-echo     ^|- Puerto !random!: SMBv1 (EternalBlue compatible)
-echo     ^|- Puerto !random!: RDP expuesto (BlueKeep vulnerable)
-ping -n 1 127.0.0.1 >nul
-if !scan_progress! lss 100 goto scan_loop
-echo [✓] 3 vectores de ataque identificados
+:: Fase 2 - Secuencia de ataque extendida
+echo [■] Iniciando protocolos de anonimización nivel 5...
+echo [■] Enrutando tráfico a través de 12 nodos fantasma...
+timeout /t 3 >nul
+echo [✓] Red TOR mejorada activa - Nivel de encriptación: AES-512
 timeout /t 2 >nul
+cls
 
-:: Simulación de explotación
-echo [■] Inyectando exploit EternalBlue (CVE-2017-0144)...
-echo     ^|- Bypasseando ASLR con ROP chain...
-for /L %%i in (1,1,3) do (
-    echo     ^|- Sobrescribiendo memoria en 0x!random!!random!!random!!random!
-    timeout /nobreak /t 1 >nul
-)
-echo [✓] Shellcode ejecutado exitosamente!
-echo [■] Estableciendo sesión Meterpreter (SSL/TLS)
+:: Fase 3 - Ataque ampliado a múltiples objetivos
+echo [■] Escaneando redes vecinas...
 timeout /t 2 >nul
+echo [✓] 34 dispositivos IoT vulnerables detectados
+echo [■] Desplegando botnet Mirai v2.1...
+timeout /t 3 >nul
+echo [✓] Red zombi activa: 89 nodos disponibles
+timeout /t 2 >nul
+cls
 
-:: Acceso a datos
+:: Fase 4 - Ataque combinado DDoS + inyección de tráfico
+echo [■] Coordinando ataque distribuido...
+timeout /t 2 >nul
+echo [■] Objetivo principal: www.grandescorporacion.com
+echo [■] Ancho de banda consumido: 1.2 Tbps
+timeout /t 3 >nul
+echo [✓] Cortafuegos principal derribado
+timeout /t 2 >nul
+cls
+
+:: Fase 5 - Penetración profunda
+echo [■] Explotando vulnerabilidad CVE-2024-36955...
+timeout /t 2 >nul
+echo [✓] Bypass de autenticación biométrica completado
+echo [■] Accediendo a cámaras de seguridad...
+timeout /t 3 >nul
+echo [✓] Feed de video comprometido - Modo vigilancia activo
+timeout /t 2 >nul
+cls
+
+:: Fase 6 - Sabotaje industrial
+echo [■] Conectando a sistemas SCADA...
+timeout /t 3 >nul
+echo [✓] Control de plantas industriales obtenido
+echo [■] Sobrecalentando reactores...
+timeout /t 2 >nul
+echo [!!!] ADVERTENCIA: Temperaturas críticas alcanzadas
+timeout /t 3 >nul
+cls
+
+:: Fase 7 - Contraataque a fuerzas de seguridad
+echo [■] Monitorizando comunicaciones policiales...
+timeout /t 2 >nul
+echo [✓] Canales de radio cifrados interceptados
+echo [■] Enviando señales de interferencia...
+timeout /t 3 >nul
+echo [✓] Sistemas de comunicación oficiales inhabilitados
+timeout /t 2 >nul
+cls
+
+:: Fase 8 - Ataque a infraestructura crítica
+echo [■] Penetrando red eléctrica nacional...
+timeout /t 3 >nul
+echo [✓] Control de subestaciones obtenido
+echo [■] Redirigiendo 400MW a nodos desconocidos...
+timeout /t 2 >nul
+echo [!!!] Apagón regional iniciado - 2,000,000+ afectados
+timeout /t 3 >nul
+cls
+
+:: Fase 9 - Manipulación mediática
+echo [■] Hackeando cadenas de televisión...
+timeout /t 2 >nul
+echo [✓] Señales de TV comprometidas
+echo [■] Transmitiendo mensaje cifrado...
+timeout /t 3 >nul
+echo [!!!] Mensaje en pantalla: "El futuro nos pertenece"
+timeout /t 2 >nul
+cls
+
+:: Fase 10 - Contra-inteligencia avanzada
+echo [■] Detectando agentes encubiertos...
+timeout /t 3 >nul
+echo [✓] 12 identidades falsas expuestas
+echo [■] Filtrando información sensible...
+timeout /t 2 >nul
+echo [!!!] Bases de datos de inteligencia comprometidas
+timeout /t 3 >nul
+cls
+
+:: Fase 11 - Ataque cuántico
+echo [■] Inicializando algoritmos Shor...
+timeout /t 3 >nul
+echo [✓] Criptografía RSA-4096 rota
+echo [■] Decriptando comunicaciones históricas...
+timeout /t 2 >nul
+echo [!!!] 12 años de comunicaciones clasificadas expuestas
+timeout /t 3 >nul
+cls
+
+:: Fase 12 - Persistencia total
+echo [■] Infectando dispositivos BIOS/UEFI...
+timeout /t 2 >nul
+echo [✓] Rootkit de bajo nivel instalado
+echo [■] Comprometiendo actualizaciones de firmware...
+timeout /t 3 >nul
+echo [!!!] Persistencia garantizada: Reinfección automática activa
+timeout /t 2 >nul
+cls
+
+:: Fase Final - Apoteosis digital
+echo [■] SINCRONIZANDO CON LA RED GLOBAL...
+timeout /t 3 >nul
 color 4F
-cls
-echo ------------------------------------------------------------------------------
-echo [*] Accediendo a sistema financiero - SWIFT Gateway 10.32.147.!random!
-echo ------------------------------------------------------------------------------
-echo [■] Desencriptando archivos EJD0!random!_TRANSFERENCIAS.asc...
-echo     ^|- Usando clave RSA robada: SHA1:!random!!random!!random!!random!!random!!random!!random!!random!
+echo [■] SISTEMA MUNDIAL COMPROMETIDO: 98.7%
 timeout /t 2 >nul
-echo [✓] 1.4 TB de datos bancarios desencriptados
-echo [■] Modificando registros contables:
-echo     ^|- Transferencia a cuenta !random! (Suiza): $!random! millones
-echo     ^|- Sobrescribiendo logs con ghost_writer.exe...
+echo [!!!] OPERACIÓN PERSEFONE COMPLETADA
 timeout /t 3 >nul
-
-:: Ataque de ransomware
-color C
 cls
-echo ------------------------------------------------------------------------------
-echo [fs0ci3ty_cr1pt0r_v2.exe] Cifrando sistema de archivos - Fase 3
-echo ------------------------------------------------------------------------------
-set "chars=ABCDEF0123456789"
-set "ransom_id="
-for /L %%i in (1,1,32) do (
-    set /a "rand=!random! %% 16"
-    call set "ransom_id=!ransom_id!!chars:~!rand!,1!"
+
+:: Secuencia de reinicio controlado
+:loop
+if %retries% LSS %max_retries% (
+    echo [■] RECICLANDO PROCESOS DE ATAQUE...
+    timeout /t 3 >nul
+    echo [✓] NUEVOS OBJETIVOS ASIGNADOS
+    timeout /t 2 >nul
+    cls
+    set /a retries+=1
+    goto loop
 )
-echo [■] ID de Rescate: !ransom_id!
-echo [■] Clave AES-256-GCM: !random!!random!!random!!random!!random!!random!!random!!random!
-echo [■] Archivos cifrados:
-for /L %%i in (1,1,5) do (
-    echo     ^|- /finanzas/operaciones/confidencial_!random!_2023.xlsx : ENCRYPTED
-    timeout /t 1 >nul
-)
-echo [■] Eliminando Volume Shadow Copies...
-timeout /t 2 >nul
 
-:: Eliminación de cuentas
-echo [■] Eliminando cuentas bancarias objetivo...
-timeout /t 2 >nul
-echo [✓] Cuentas eliminadas exitosamente
-
-echo [■] Eliminando credenciales de acceso...
-timeout /t 3 >nul
-echo [✓] Credenciales eliminadas permanentemente
-
-:: Comunicación Dark Army
-color 0A
-cls
-echo ------------------------------------------------------------------------------
-echo [Secure Comms] Dark Army C&C - Operación Perséfone (Nivel 9)
-echo ------------------------------------------------------------------------------
-echo [IN]  <!random!> Elliot: Necesitamos acceso al sistema HVAC de E Corp
-echo [OUT] > Root obtenido en HVAC_Controller_!random! (Temp: !random!°C)
-echo [IN]  <!random!> Implantar backdoor en PLC Siemens S7-!random!
-echo [OUT] > Ejecutando stuxnet_mod_v3.dll (Reinicio en !random! segundos)
-timeout /t 4 >nul
-
-:: Alerta FBI
-color 17
-cls
-echo ═══════════════════════════════════════════════════════════════════════════════
-echo  FBI CYBER DIVISION ALERT: ACTIVIDAD DE APT DETECTADA (Dark Army Signature)
-echo ═══════════════════════════════════════════════════════════════════════════════
-echo [■] Orden de búsqueda y captura emitida contra el usuario actual
-echo [■] Traceroute iniciado desde: 192.168.!random!.!random!
-echo [■] Patrón de ataque coincide con grupo APT!random! (Confianza 98.7%)
-echo [■] Notificando a Equipo NIGHTMARE (CISO E Corp)
-timeout /t 3 >nul
-
-:: Contraataque
-color 0C
-cls
-echo ------------------------------------------------------------------------------
-echo [root@elliot-pc]~/.scripts/ # ./zero_day_wipe.sh --aggressive --shred-level=35
-echo ------------------------------------------------------------------------------
-echo [■] Sobrescribiendo MBR con /dev/urandom...
-echo [■] Destruyendo evidencias forenses:
-for /L %%i in (1,1,3) do (
-    echo     ^|- Disco %%i: 35 pasos Gutmann (Sectores 0-!random!)
-    timeout /t 1 >nul
-)
-echo [✓] Todos los datos destruidos permanentemente
-timeout /t 2 >nul
-
-:: Mensaje final
-color 0A
-cls
-echo ------------------------------------------------------------------------------
-echo [fsociety.dat] Mensaje encriptado (4096-bit PGP - Dark Army Key)
-echo ------------------------------------------------------------------------------
-echo "La realidad es una construcción. El dinero es un mito. Nos vemos en el otro lado."
-echo ------------------------------------------------------------------------------
-timeout /t 5 >nul
+echo [■] Fin del ataque. Presiona cualquier tecla para salir...
+pause >nul
 exit
