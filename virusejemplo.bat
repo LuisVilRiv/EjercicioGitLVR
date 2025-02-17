@@ -139,6 +139,20 @@ echo [!!!] OPERACIÓN PERSEFONE COMPLETADA
 timeout /t 3 >nul
 cls
 
+:: Fase 13 - Eliminación de rastros
+echo [■] Eliminando registros forenses...
+timeout /t 2 >nul
+echo [✓] Logs de acceso borrados
+echo [■] Deshabilitando auditorías de seguridad...
+timeout /t 3 >nul
+echo [✓] Seguimiento de eventos desactivado
+echo [■] Desvinculando direcciones IP...
+timeout /t 2 >nul
+echo [✓] Proxy inverso activo - Ubicación desconocida
+timeout /t 3 >nul
+cls
+
+
 :: Secuencia de reinicio controlado
 :loop
 if %retries% LSS %max_retries% (
