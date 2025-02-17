@@ -175,16 +175,20 @@ timeout /t 2 >nul
 :: Guardar mensaje codificado en Base64 en una variable
 set encoded=ZWNobyBbXl0gU2lzdGVtYSBDb21wcm9tZXRpZG8hCg==
 
-:: Decodificar y ejecutar con PowerShell (con mejor manejo de codificación)
-powershell -NoProfile -ExecutionPolicy Bypass -Command "[System.Text.Encoding]::ASCII.GetString([System.Convert]::FromBase64String('%encoded%')) | Set-Content -Encoding ASCII decoded.bat"
+:: Definir la ruta del archivo decoded.bat en el mismo directorio donde está el script
+set decodedFile=%~dp0decoded.bat
+
+:: Decodificar y guardar en el mismo directorio
+powershell -NoProfile -ExecutionPolicy Bypass -Command "[System.Text.Encoding]::ASCII.GetString([System.Convert]::FromBase64String('%encoded%')) | Set-Content -Encoding ASCII '%decodedFile%'"
 
 :: Ejecutar el archivo generado
-call decoded.bat
-del decoded.bat
+call "%decodedFile%"
+del "%decodedFile%"
 
 echo [✓] Código ejecutado de forma cifrada
 timeout /t 3 >nul
 cls
+
 
 
 
