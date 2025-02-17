@@ -1,0 +1,8 @@
+------------------------------
+DISCLAIMER: USO EDUCATIVO SOLAMENTE
+------------------------------
+Este script es una simulación de un ataque cibernético diseñado para fines educativos y académicos. No debe ser utilizado para actividades maliciosas ni para comprometer sistemas ajenos sin el consentimiento adecuado. Su propósito es ayudar a comprender los principios básicos de la seguridad informática, los ataques de propagación y evasión, y las técnicas de ofuscación.
+
+El uso indebido de este script es ilegal y puede resultar en graves consecuencias legales.
+
+Desarrollado para fines de aprendizaje y experimentación en entornos controlados, con fines exclusivamente educativos.
