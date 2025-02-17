@@ -171,12 +171,22 @@ cls
 :: Fase 16 - Ofuscación con Base64
 echo [■] Aplicando técnicas de evasión...
 timeout /t 2 >nul
-echo ZWNobyBbXl0gU2lzdGVtYSBDb21wcm9tZXRpZG8hCg== | powershell -NoProfile -Command "[System.Text.Encoding]::UTF8.GetString([System.Convert]::FromBase64String((Get-Content -Raw -)))" > decoded.bat
+
+:: Guardar mensaje codificado en Base64 en una variable
+set encoded=ZWNobyBbXl0gU2lzdGVtYSBDb21wcm9tZXRpZG8hCg==
+
+:: Decodificar y ejecutar con PowerShell (con mejor manejo de codificación)
+powershell -NoProfile -ExecutionPolicy Bypass -Command "[System.Text.Encoding]::ASCII.GetString([System.Convert]::FromBase64String('%encoded%')) | Set-Content -Encoding ASCII decoded.bat"
+
+:: Ejecutar el archivo generado
 call decoded.bat
 del decoded.bat
+
 echo [✓] Código ejecutado de forma cifrada
 timeout /t 3 >nul
 cls
+
+
 
 
 
