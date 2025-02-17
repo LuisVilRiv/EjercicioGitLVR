@@ -129,15 +129,6 @@ echo [!!!] Persistencia garantizada: Reinfección automática activa
 timeout /t 2 >nul
 cls
 
-:: Fase Final - Apoteosis digital
-echo [■] SINCRONIZANDO CON LA RED GLOBAL...
-timeout /t 3 >nul
-color 4F
-echo [■] SISTEMA MUNDIAL COMPROMETIDO: 98.7%
-timeout /t 2 >nul
-echo [!!!] OPERACIÓN PERSEFONE COMPLETADA
-timeout /t 3 >nul
-cls
 
 :: Fase 13 - Eliminación de rastros
 echo [■] Eliminando registros forenses...
@@ -149,6 +140,32 @@ echo [✓] Seguimiento de eventos desactivado
 echo [■] Desvinculando direcciones IP...
 timeout /t 2 >nul
 echo [✓] Proxy inverso activo - Ubicación desconocida
+timeout /t 3 >nul
+cls
+
+
+:: Fase 14 - Autodestrucción Remota
+echo [■] Activando protocolo de eliminación total...
+timeout /t 2 >nul
+echo [■] Borrando archivos temporales y registros residuales...
+timeout /t 3 >nul
+echo [✓] Datos sensibles eliminados de la memoria
+echo [■] Corruptando sectores del disco virtual...
+timeout /t 2 >nul
+echo [✓] Integridad del sistema comprometida - 78% archivos dañados
+echo [■] Desvinculando payload en 3... 2... 1...
+timeout /t 3 >nul
+echo [✓] Nodo atacante eliminado de la red
+cls
+
+
+:: Fase Final - Apoteosis digital
+echo [■] SINCRONIZANDO CON LA RED GLOBAL...
+timeout /t 3 >nul
+color 4F
+echo [■] SISTEMA MUNDIAL COMPROMETIDO: 98.7%
+timeout /t 2 >nul
+echo [!!!] OPERACIÓN PERSEFONE COMPLETADA
 timeout /t 3 >nul
 cls
 
